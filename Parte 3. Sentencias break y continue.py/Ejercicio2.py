@@ -2,7 +2,7 @@
 numeros = [];
 cantidad=int(input("Ingrese la cantidad de números que desea ingresar: "));
 for i in range(cantidad):
-    numero=int(input("Ingrese un número: "));
+    numero=int(input(f"Ingrese el número {i + 1}: "));
     numeros.append(numero);
     if numero < 0:
         print("Se ha ingresado un número negativo. Se detendrá la entrada de números.");
