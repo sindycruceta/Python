@@ -3,20 +3,21 @@
 
 from calculo_totales import totales;
 from calculo_maximo import maximo;
+from calculo_minimo import minimo;
 
+dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
 botellas= [];
-i=1;
 
-while len(botellas) < 7:
-    botella= int(input(f'Ingrese la cantidad de botellas del día {i} '))
-    botellas.append(botella)
-    print(f'Total botellas del día {i}')
-    i+= 1;
+
+for dia in dias:
+    cantidad= int(input(f'Ingrese la cantidad de botellas el {dia}: '))
+    botellas.append(cantidad)
     
 print ('Botellas por días:', botellas);
 
 total_botellas = totales(botellas);
 maximo_botellas = maximo(botellas);
+minimo_botellas= minimo(botellas);
 
 print('--------------------TOTALES Y ESTADISTICAS--------------------')
 print(f'Total de botellas recicladas en la semana: {total_botellas}')
