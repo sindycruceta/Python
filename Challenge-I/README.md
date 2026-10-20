@@ -1,0 +1,1 @@
+#Esta documentación explica el funcionamiento del contador ecológico desarrollado por Helen Concepción y Sindy Cruceta para la iniciativa de reciclaje de la ciudad Verdesol. 
