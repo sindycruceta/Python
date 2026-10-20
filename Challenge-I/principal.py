@@ -2,7 +2,7 @@
 #Este es el archivo principal del programa, el cual se encarga de la entrada y salida de datos. 
 import math
 from calculo_totales import calcular_totales, calcular_extremos
-from bonus import meta_nueva;
+from bonus import calcular_meta_semana_proxima;
 
 dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
 botellas= [];
@@ -23,11 +23,10 @@ print(f"Promedio diario de botellas recicladas: {promedio:.2f}")
 print(f'Día con mayor candidad de botellas recicladas: {dia_mayor} ({mayor} botellas')
 print(f"Día con menor candidad de botellas recicladas: {dia_menor} ({menor} botellas ")
 
-# reemplazar el 10 por las botellas que hay que reciclar realmente, el valor se encuentra en el calculo extra(bonus).
-
+meta_nueva, por_dia = calcular_meta_semana_proxima(total)
 
 print("--------------------META PARA LA PROXIMA SEMANA---------------")
 print(f"Meta actual (total de esta semana): {total}")
 print(f"Meta para superarla en 10%: {meta_nueva:.1f} botellas")
 print(f'Esta semana se reciclaron {total} botellas.\n ¿Sabías que reciclando 10 botellas en la próxima semana \n pueden superar estos resultados en un 10%?\n ¡Cada pequeño cambio puede hacer de este mundo un lugar mejor!')
-
+print(f"Debes reciclar al menos {por_dia} botellas por dia")
