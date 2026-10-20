@@ -15,9 +15,14 @@ for i in range(cantidad):
 # Imprimo el diccionario
 print(personas)
 
+# Pido el nombre de la persona que desea eliminar
 texto=input("Ingrese el nombre de la persona a eliminar: ")
+# Verifico si ese nombre existe como clave en el diccionario
 if texto in personas:
+ # Si existe, elimino ese par (nombre y edad) del diccionario
     del personas[texto]
+    # Si no existe, aviso al usuario
 else:
     print("Esa persona no existe")
+# Imprimo el diccionario actualizado
 print(personas)

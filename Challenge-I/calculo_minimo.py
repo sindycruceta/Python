@@ -1,9 +1,15 @@
-#Este algoritmo calcula el día del mínimo de botellas recicladas
+#Este algoritmo calcula el día maximo y mínimo de botellas recicladas:
+from principal import dias;
+from principal import botellas;
+from calculo_totales import mayor;
+from calculo_totales import menor;
 
-#! descomenta el contenido de la línea 4, lo comenté para que no de error: 
-# def minimo(botellas):
+for i in range(len(botellas)):
+    if botellas[i] > mayor:
+        mayor = botellas [i]
+        dia_mayor = dias[i]
+    if botellas [i] < menor:
+        menor = botellas [i]
+        dia_menor = dias [i]
 
-#*EN ESTA PARTE  COLOCAMOS TODA LA LÓGICA Y SI QUIERES PUEDES IMPRIMIR EL RESULTADO EN CONSOLA, PARA IMPORTARLO EN EL ARCHIVO PRINCIPAL: 
-
-#?from calculo_minimo import minimo;
     
