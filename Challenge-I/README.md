@@ -1,1 +1,6 @@
-#Esta documentación explica el funcionamiento del contador ecológico desarrollado por Helen Concepción y Sindy Cruceta para la iniciativa de reciclaje de la ciudad Verdesol. 
+Esta documentación explica el funcionamiento del contador ecológico desarrollado por Helen Concepción y Sindy Cruceta para la iniciativa de reciclaje de la ciudad Verdesol, la cual tiene el objetivo de reciclar la mayor cantidad posible de botellas plásticas al día con el fin de reducir el impacto ambiental de estas en las fuentes de agua de la zona. 
+
+El archivo principal gestiona la entrada y salida de datos.
+Contiene las estructuras de control necesarias para cerciorarse de que el programa no admita valores negativos, y el ciclo que permite solicitar al usuario el número de botellas recicladas.
+
+Dentro del archivo principal se importan los cálculos de los archivos calculo_totales, el cual contiene las operaciones necesarias para obtener métricas como los días de mayor y menor reciclaje y el promedio de botellas recicladas. El archivo bonus contiene el cálculo de cuántas botellas se deben reciclar para superar la meta actual en un 10% en la semana siguiente, lo que permite establecer objetivos de desarrollo sostenible. 
