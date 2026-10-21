@@ -3,13 +3,15 @@
 Nombres: Helen Concepción, Sindy Cruceta.
 Matrículas: , 2024-1034.
 '''
+
+#Estas importaciones corresponden a los archivos que contienen los cálculos a utilizar para procesar los datos.
 import math
 from calculo_totales import calcular_totales, calcular_extremos
 from bonus import calcular_meta_semana_proxima;
 
-dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"] #Listas con los días de la semana y lista vacía para almacenar las botellas por día.
 botellas= [];
-i=0;
+i=0; #Variable de control
 for dia in dias:
     cantidad= int(input(f'Ingresa la cantidad de botellas recicladas el {dia}: '))
     if cantidad < i:
