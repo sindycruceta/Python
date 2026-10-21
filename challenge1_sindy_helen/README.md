@@ -1,3 +1,5 @@
+#Documentación explicativa del contador ecológico. 
+
 Esta documentación explica el funcionamiento del contador ecológico desarrollado por Helen Concepción y Sindy Cruceta para la iniciativa de reciclaje de la ciudad Verdesol, la cual tiene el objetivo de reciclar la mayor cantidad posible de botellas plásticas al día con el fin de reducir el impacto ambiental de estas en las fuentes de agua de la zona. 
 
 El archivo principal gestiona la entrada y salida de datos.
