@@ -1,7 +1,7 @@
 
 '''Este es el archivo principal del programa, el cual se encarga de la entrada y salida de datos. 
 Nombres: Helen Concepción, Sindy Cruceta.
-Matrículas: , 2024-1034.
+Matrículas: 2026-0341 , 2024-1034.
 '''
 
 #Estas importaciones corresponden a los archivos que contienen los cálculos a utilizar para procesar los datos.
@@ -12,11 +12,15 @@ from bonus import calcular_meta_semana_proxima;
 dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"] #Listas con los días de la semana y lista vacía para almacenar las botellas por día.
 botellas= [];
 i=0; #Variable de control
-for dia in dias:
+
+while i < len(dias):
+    dia= dias[i];
     cantidad= int(input(f'Ingresa la cantidad de botellas recicladas el {dia}: '))
-    if cantidad < i:
-        print('Ingrese una cantidad positiva.')
-        i -= i;
+    if cantidad < 0:
+            print('Ingrese una cantidad positiva.')
+            i = i-1;
+    else:
+        i = i +1;
         botellas.append(cantidad)
 
 total, promedio= calcular_totales(botellas)
