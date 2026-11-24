@@ -1,8 +1,12 @@
 # = Proyecto final de Sindy Cruceta y Helen Concepcion: Gestor de contactos.
 # & Lista de opciones válidas del menú (0 es para salir)
 opciones= [1,2,3,4,5,6,0]
-#& Lista vacía donde se irán guardando todos los contactos
-contactos= []
+#& Listas vacías donde se irán guardando todos los contactos
+nombres = []
+telefonos = []
+correos = []
+    
+
 #? Función para mostrar el menú de opciones en pantalla
 def mostrar_menu():
     print("===================================================")
@@ -29,8 +33,9 @@ while opcion != 0 :
         correo= input("Ingrese el correo electrónico del contacto que desea agregar, o presione Enter para omitirlo: ")
         if correo== "":
             correo= "Sin correo electrónico."
-        contacto= {"Nombre": nombre, "Teléfono": telefono, "Correo electrónico": correo}
-        contactos.append(contacto)
+        nombres.append(nombre)
+        telefonos.append(telefono)
+        correos.append(correo)
 
         print(f"Contacto agregado de manera exitosa: \n Nombre: {nombre} \n Telefono: {telefono} \n Correo electronico: {correo}")
         
@@ -38,12 +43,12 @@ while opcion != 0 :
     if opcion == 2:
         buscar= input("Ingrese el nombre del contacto que desee buscar: ").lower()
         cantidad = 0
-        for contacto in contactos:
-            if buscar== contacto["Nombre"].lower():
+        for i in range(len(nombres)):
+            if buscar == nombres[i].lower():
                 print("¡Listo! Su contacto fue encontrado con éxito. Los datos del mismo son: ")
-                print("Nombre: ", contacto["Nombre"])
-                print("Teléfono:", contacto["Teléfono"])
-                print("Correo:", contacto["Correo electrónico"])
+                print("Nombre: ", nombres[i])
+                print("Teléfono:", telefonos[i])
+                print("Correo:", correos[i])
                 cantidad = cantidad+1
         if cantidad == 0:
             print("No se encontró ningun contacto agregado con ese nombre.")
@@ -52,9 +57,9 @@ while opcion != 0 :
     if opcion == 3:
         eliminar= input("Ingrese el nombre del contacto que desee eliminar: ").lower()
         eliminados = 0
-        for contacto in contactos:
-            if eliminar == contacto["Nombre"].lower():
-                contactos.remove(contacto)
+        for i in range (len(nombres)):
+            if eliminar == nombres[i].lower():
+                nombres.remove(nombres)
                 eliminados= eliminados + 1
         if eliminados == 0:
             print("No se encontró ningún contacto con ese nombre.")
