@@ -14,12 +14,12 @@ print("Te damos la bienvenida a nuestro proyecto final!\n")
 
 #? Función para mostrar el menú de opciones en pantalla
 def mostrar_menu():
+    opcion = int(input("¿Que acción desea realizar?"))
     print("===================================================")
     print("Este es el menú de opciones: \n 1- Agregar contacto. \n 2- Buscar contacto. \n 3- Eliminar contacto. \n 4- Ver contactos. \n 5- Editar contacto. \n 6- Eliminar todos los contactos. \n 0- Salir.")
     print("===================================================")
 
 mostrar_menu()
-opcion = int(input("¿Que acción desea realizar?"))
 
 #? POR SI EL USUARIO INGRESA UN NUMERO DISTINTO A LOS QUE ESTAN EN EL MENU DE OPCIONES
 while opcion not in opciones_menu:
@@ -45,7 +45,6 @@ while opcion != 0 :
         print(f"Contacto agregado de manera exitosa: \n Nombre: {nombre} \n Telefono: {telefono} \n Correo electronico: {correo}\n\n")
         
         mostrar_menu()
-        opcion = int(input("¿Que acción desea realizar?"))
         
         # * BUSCAR CONTACTO:
     elif opcion == 2:
@@ -65,10 +64,15 @@ while opcion != 0 :
     elif opcion == 3:
         eliminar= input("Ingrese el nombre del contacto que desee eliminar: ").lower()
         eliminados = 0
-        for i in range (len(nombres)):
+        i=0
+        while i < len(nombres):
             if eliminar == nombres[i].lower():
-                nombres.remove(nombres)
+                nombres.pop(i)
+                telefonos.pop(i)
+                correos.pop(i)
                 eliminados= eliminados + 1
+            else:
+                i=i+1
         if eliminados == 0:
             print("No se encontró ningún contacto con ese nombre.")
         else:
@@ -81,9 +85,7 @@ while opcion != 0 :
 
         for nombres,telefonos,correos in zip(nombres,telefonos,correos):
             print(f"{nombre}, {telefono}, {correo}")
-        mostrar_menu()
-        opcion = int(input("¿Que acción desea realizar?"))
-        
+        mostrar_menu()        
     
     #*  EDITAR CONTACTO
     elif opcion == 5:
