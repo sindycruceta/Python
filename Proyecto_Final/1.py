@@ -1,23 +1,28 @@
+
+#!VERSION EDITADA
+
 # = Proyecto final de Sindy Cruceta y Helen Concepcion: Gestor de contactos.
 # & Lista de opciones válidas del menú (0 es para salir)
-opciones= [1,2,3,4,5,6,0]
+opciones_menu= [1,2,3,4,5,6,0]
+opciones_eliminar= [0,1]
 #& Listas vacías donde se irán guardando todos los contactos
 nombres = []
 telefonos = []
 correos = []
-    
+
+print("Te damos la bienvenida a nuestro proyecto final!\n")
 
 #? Función para mostrar el menú de opciones en pantalla
 def mostrar_menu():
     print("===================================================")
-    print("Te damos la bienvenida a nuestro proyecto final! \n Este es el menú de opciones: \n 1- Agregar contacto. \n 2- Buscar contacto. \n 3- Eliminar contacto. \n 4- Ver contactos. \n 5- Editar contacto. \n 6- Eliminar todos los contactos. \n 0- Salir.")
+    print("Este es el menú de opciones: \n 1- Agregar contacto. \n 2- Buscar contacto. \n 3- Eliminar contacto. \n 4- Ver contactos. \n 5- Editar contacto. \n 6- Eliminar todos los contactos. \n 0- Salir.")
     print("===================================================")
 
 mostrar_menu()
 opcion = int(input("¿Que acción desea realizar?"))
 
 #? POR SI EL USUARIO INGRESA UN NUMERO DISTINTO A LOS QUE ESTAN EN EL MENU DE OPCIONES
-while opcion not in opciones:
+while opcion not in opciones_menu:
     print("Esta opción no existe, ingrese una opción válida.")
     mostrar_menu()
     opcion= int(input("¿Qué acción desea realizar? \n")) 
@@ -37,10 +42,13 @@ while opcion != 0 :
         telefonos.append(telefono)
         correos.append(correo)
 
-        print(f"Contacto agregado de manera exitosa: \n Nombre: {nombre} \n Telefono: {telefono} \n Correo electronico: {correo}")
+        print(f"Contacto agregado de manera exitosa: \n Nombre: {nombre} \n Telefono: {telefono} \n Correo electronico: {correo}\n\n")
+        
+        mostrar_menu()
+        opcion = int(input("¿Que acción desea realizar?"))
         
         # * BUSCAR CONTACTO:
-    if opcion == 2:
+    elif opcion == 2:
         buscar= input("Ingrese el nombre del contacto que desee buscar: ").lower()
         cantidad = 0
         for i in range(len(nombres)):
@@ -54,7 +62,7 @@ while opcion != 0 :
             print("No se encontró ningun contacto agregado con ese nombre.")
             
         # * ELIMINAR CONTACTO:
-    if opcion == 3:
+    elif opcion == 3:
         eliminar= input("Ingrese el nombre del contacto que desee eliminar: ").lower()
         eliminados = 0
         for i in range (len(nombres)):
@@ -65,9 +73,37 @@ while opcion != 0 :
             print("No se encontró ningún contacto con ese nombre.")
         else:
             print("El contacto fue eliminado con éxito.")
+            
+        #*  VER CONTACTOS
         
-    mostrar_menu()
-    opcion = int(input("¿Qué acción desea realizar? \n"))
+    elif opcion == 4:
+        print("Contactos existentes:\n")
+
+        for nombres,telefonos,correos in zip(nombres,telefonos,correos):
+            print(f"{nombre}, {telefono}, {correo}")
+        mostrar_menu()
+        opcion = int(input("¿Que acción desea realizar?"))
+        
+    
+    #*  EDITAR CONTACTO
+    elif opcion == 5:
+        contacto_editar= int(input("Ingrese el nombre del contacto que desea editar..."))
+        for nombre in nombres:
+            if nombre["nombre"]== contacto_editar:
+                print("Este es el contacto a editar")
+        
+    #*  ELIMINAR TODOS LOS CONTACTOS
+    elif opcion == 6:
+        eliminar_todos= int(input("¿Está seguro de que desea eliminar todos los contactos? escriba 0 para cancelar, 1 para confirmar"))
+        while eliminar_todos not in opciones_eliminar:
+            print("Las opciones validas son 0 y 1")
+        if eliminar_todos== 1:
+            nombres.clear()
+            telefonos.clear()
+            correos.clear()
+            print("Se han eliminado todos los contactos")
+        else: 
+                mostrar_menu()
     
     #? MENSAJE DE AGRADECIMIENTO POR USAR EL PROGRAMA, SE MOSTRARÁ CUANDO EL USUARIO DESEE SALIR DEL PROGRAMA
 
