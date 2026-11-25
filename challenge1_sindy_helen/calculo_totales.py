@@ -1,5 +1,5 @@
 
-#Esta función calcula el total de botellas ingresadas durante toda la semana y calcula el promedio. 
+
 def calcular_totales (botellas): 
     total=0
     for cantidad in botellas:

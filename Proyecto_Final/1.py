@@ -87,10 +87,14 @@ while opcion != 0 :
     
     #*  EDITAR CONTACTO
     elif opcion == 5:
-        contacto_editar= int(input("Ingrese el nombre del contacto que desea editar..."))
+        contacto_editar= input("Ingrese el nombre del contacto que desea editar...")
         for nombre in nombres:
-            if nombre["nombre"]== contacto_editar:
-                print("Este es el contacto a editar")
+            if nombre== contacto_editar:
+                print(f"Este es el contacto a editar {nombre}")
+                nuevo_nombre=input("Ingrese el nuevo nombre...")
+                nombre = nuevo_nombre
+                print(f"Este es el nuevo nombre: {nombre}")
+                mostrar_menu()
         
     #*  ELIMINAR TODOS LOS CONTACTOS
     elif opcion == 6:
